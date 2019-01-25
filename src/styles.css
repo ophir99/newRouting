@@ -4,3 +4,32 @@
 body{
     margin: 0;
 }
+
+.container-x{
+    width: 100vw;
+    height: 100vh;
+}
+.container-x ul{
+    display: flex;
+}
+.container-x ul li{
+    flex-grow: 2;
+    list-style: none;
+   
+}.container-x ul li a{
+    text-decoration: none;
+    background-color: blue;
+    color: #FFF;
+    padding: 10px;
+}
+.container-x ul li a.active{
+    text-decoration: none;
+    background-color:#FFF;;
+    color: blue;
+    padding: 10px;
+}
+
+.child-container{
+    width: 100%;
+    padding: 20px;
+}

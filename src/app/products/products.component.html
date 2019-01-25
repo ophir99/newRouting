@@ -1,0 +1,30 @@
+
+<div class="container-x">
+  <ul>
+    <li>
+      <a  routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{
+        exact: true
+      }">
+        Products Home
+      </a>
+    </li>
+    <li>
+      <a routerLink="./websites" routerLinkActive="active">
+        Websites
+      </a>
+    </li>
+    <li>
+      <a routerLink="./mobileapps" routerLinkActive="active">
+        Mobile Apps
+      </a>
+    </li>
+    <li>
+      <a routerLink="./cloud" routerLinkActive="active">
+        Cloud
+      </a>
+    </li>
+  </ul>
+  <div class="child-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

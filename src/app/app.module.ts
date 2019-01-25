@@ -8,8 +8,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { RouterModule } from "@angular/router";
+import { RouterModule, PreloadAllModules } from "@angular/router";
 import { ErrComponent } from './err/err.component';
+import { ProductsModule } from './products/products.module';
+import { ServicesModule } from './services/service.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { ErrComponent } from './err/err.component';
     HomeComponent,
     AboutusComponent,
     ContactComponent,
-    ErrComponent
+    ErrComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,12 +47,22 @@ import { ErrComponent } from './err/err.component';
         component: ContactComponent
       },
       {
+        path: 'products',
+        loadChildren: './products/products.module#ProductsModule'
+      },
+      {
+        path: 'services',
+        loadChildren: './services/service.module#ServicesModule'
+      },
+      {
         path: "**",
         component: ErrComponent
         // redirectTo: 'contact',
         // pathMatch: 'full'
       }
-    ])
+    ], {
+      preloadingStrategy: PreloadAllModules
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
