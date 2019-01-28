@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobileappsComponent implements OnInit {
 
+  childMenu =[
+    {
+      label: 'Nokia'
+    },
+    {
+      label: 'Samsung'
+    },
+    {
+      label: 'HTC',
+
+    },
+    {
+      label: 'Sony'
+    },
+    {
+      label: 'Apple'
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

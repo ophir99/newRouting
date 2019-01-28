@@ -1,3 +1,13 @@
+<div class="container">
+  <ul>
+    <li routerLink="./{{menu.label}}" *ngFor="let menu of childMenu">
+      {{menu.label}}
+    </li>
+  </ul>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <p>
-  mobileapps works!
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias dolorum, laudantium veniam nihil assumenda dolorem facilis at inventore provident tempora sed? Odio dolorem modi consequuntur soluta in, totam exercitationem eligendi!
 </p>

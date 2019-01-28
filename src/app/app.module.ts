@@ -12,6 +12,7 @@ import { RouterModule, PreloadAllModules } from "@angular/router";
 import { ErrComponent } from './err/err.component';
 import { ProductsModule } from './products/products.module';
 import { ServicesModule } from './services/service.module';
+import { Simple } from './one';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,7 @@ import { ServicesModule } from './services/service.module';
         // pathMatch: 'full'
       }
     ], {
-      preloadingStrategy: PreloadAllModules
+      preloadingStrategy: Simple
     })
   ],
   providers: [],

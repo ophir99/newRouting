@@ -6,6 +6,9 @@ import { WebsiteComponent } from './website/website.component';
 import { MobileappsComponent } from './mobileapps/mobileapps.component';
 
 import { RouterModule } from "@angular/router";
+import { MobileComponent } from './mobileapps/mobile/mobile.component';
+import { MobilehomeComponent } from './mobileapps/mobilehome/mobilehome.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -13,9 +16,12 @@ import { RouterModule } from "@angular/router";
         CloudComponent,
         ProductsHomeComponent,
         WebsiteComponent,
-        MobileappsComponent
+        MobileappsComponent,
+        MobileComponent,
+        MobilehomeComponent
     ],
     imports: [
+        CommonModule,
         RouterModule.forChild([{
             path: '',
             component: ProductsComponent,
@@ -30,7 +36,18 @@ import { RouterModule } from "@angular/router";
               },
               {
                 path: 'mobileapps',
-                component: MobileappsComponent
+                component: MobileappsComponent,
+                children: [
+                  {
+                    path: "",
+                    component: MobilehomeComponent
+
+                  },
+                  {
+                    path: ':app',
+                    component: MobileComponent
+                  }
+                ]
               },
               {
                 path: 'cloud',
