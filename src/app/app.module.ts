@@ -13,6 +13,7 @@ import { ErrComponent } from './err/err.component';
 import { ProductsModule } from './products/products.module';
 import { ServicesModule } from './services/service.module';
 import { Simple } from './one';
+import { ChildComponent } from './child/child.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { Simple } from './one';
     AboutusComponent,
     ContactComponent,
     ErrComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,

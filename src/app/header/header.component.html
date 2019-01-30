@@ -1,19 +1,20 @@
 <div>
-  <ul>
-    <li routerLinkActive="active">
-      <a routerLink="/home" >Home</a>
-    </li>
-    <li routerLinkActive="active">
-      <a routerLink="/contact" >Contact</a>
-    </li>
-    <li routerLinkActive="active">
-      <a routerLink="/aboutus">About us</a>
-    </li>
-    <li routerLinkActive="active">
-      <a routerLink="/products" >Products</a>
-    </li>
-    <li routerLinkActive="active">
-      <a routerLink="/services">Services</a>
-    </li>
-  </ul>
+    <ul *ngIf="showMenu">
+        <li routerLinkActive="active">
+            <a routerLink="/home">Home</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/contact">Contact</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/aboutus">About us</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/products">Products</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="/services">Services</a>
+        </li>
+    </ul>
+    <button routerLink="/contact">Go to Contact</button>
 </div>

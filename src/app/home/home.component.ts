@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  obj = {
+    name: 'Angular',
+    version: 7
+  }
+
+  tool="Node JS";
   constructor() { }
 
   ngOnInit() {
+  }
+
+  catchData(e){
+    console.log(e)
+    this.tool = e.name;
   }
 
 }

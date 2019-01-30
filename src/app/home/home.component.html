@@ -1,8 +1,14 @@
 <div>
-  <h1>
-    Home
-  </h1>
-  <p *ngFor="let x of [1,1,1,1,1,1,1,1,1,1,1,1,1,1]">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente quis autem excepturi quibusdam ut ex aut rerum asperiores praesentium quos eos nostrum facilis nam dolore, exercitationem debitis soluta repellendus eveniet!
-  </p>
+    <h1>
+        Home now
+    </h1>
+    <h1>
+        {{obj.name}}
+    </h1>
+    <h1>
+        {{tool}}
+    </h1>
+    <app-child [y]="obj" [z]="tool" (customE)="catchData($event)"></app-child>
 </div>
+
+<img src="" alt="">
