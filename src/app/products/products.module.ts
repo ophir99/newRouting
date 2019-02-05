@@ -9,7 +9,8 @@ import { RouterModule } from "@angular/router";
 import { MobileComponent } from './mobileapps/mobile/mobile.component';
 import { MobilehomeComponent } from './mobileapps/mobilehome/mobilehome.component';
 import { CommonModule } from '@angular/common';
-
+import { WebsiteActivate } from './website/websiteactivate.guard';
+import { WebsiteDeactivate } from './website/websitedeactivate.guard';
 @NgModule({
     declarations: [
         ProductsComponent,
@@ -32,6 +33,8 @@ import { CommonModule } from '@angular/common';
               },
               {
                 path: 'websites',
+                canActivate: [WebsiteActivate],
+                canDeactivate: [WebsiteDeactivate],
                 component: WebsiteComponent
               },
               {

@@ -12,21 +12,25 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router: Router
   ) { 
-    this.router.navigateByUrl('/products/web')
-    
-  }
-
-  ngOnInit() {
+    // this.router.navigateByUrl('/products/web')
     this.router.events.subscribe(
       (data)=>{
         console.log("Route....", this.router.url);
-        if(this.router.url != '/home'){
+        if(this.router.url !== '/home'){
+          console.log("done")
           this.showMenu = true;
         }else{
           this.showMenu = false;
         }
+      },
+      (err)=>{
+        console.log(err)
       }
     )
+  }
+
+  ngOnInit() {
+    
   }
 
 }

@@ -14,6 +14,8 @@ import { ProductsModule } from './products/products.module';
 import { ServicesModule } from './services/service.module';
 import { Simple } from './one';
 import { ChildComponent } from './child/child.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomPreLoading } from './cutstom.preloading';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { ChildComponent } from './child/child.component';
     ChildComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       // {
@@ -51,11 +54,17 @@ import { ChildComponent } from './child/child.component';
       },
       {
         path: 'products',
-        loadChildren: './products/products.module#ProductsModule'
+        loadChildren: './products/products.module#ProductsModule',
+        data:{
+          delay: 5
+        }
       },
       {
         path: 'services',
-        loadChildren: './services/service.module#ServicesModule'
+        loadChildren: './services/service.module#ServicesModule',
+        data:{
+          delay: 0
+        }
       },
       {
         path: "**",
@@ -64,7 +73,7 @@ import { ChildComponent } from './child/child.component';
         // pathMatch: 'full'
       }
     ], {
-      preloadingStrategy: Simple
+      preloadingStrategy: CustomPreLoading
     })
   ],
   providers: [],
