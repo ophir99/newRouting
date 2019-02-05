@@ -14,6 +14,7 @@ import { ProductsModule } from './products/products.module';
 import { ServicesModule } from './services/service.module';
 import { Simple } from './one';
 import { ChildComponent } from './child/child.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ChildComponent } from './child/child.component';
     ChildComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       // {

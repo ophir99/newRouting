@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-apidev',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApidevComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private activatedR: ActivatedRoute
+  ) { 
+    console.log("Logging from constructor");
+    this.activatedR.data.subscribe(
+      res => {
+        console.log(res);
+      }
+    )
+  }
 
   ngOnInit() {
+    console.log("Logging from On Init")
   }
 
 }

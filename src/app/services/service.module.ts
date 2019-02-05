@@ -5,11 +5,14 @@ import { ApidevComponent } from './apidev/apidev.component';
 import { WebdevComponent } from './webdev/webdev.component';
 import { AutomationComponent } from './automation/automation.component';
 import { RouterModule } from '@angular/router';
+import { ServicesResolver } from './service.resolver';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
     declarations: [ServicesComponent,ServicesHomeComponent, ApidevComponent, WebdevComponent, AutomationComponent],
     imports: [
+      HttpClientModule,
         RouterModule.forChild([{
             path: '',
             component: ServicesComponent,
@@ -25,7 +28,10 @@ import { RouterModule } from '@angular/router';
               },
               {
                 path: 'apidev',
-                component: ApidevComponent
+                component: ApidevComponent,
+                resolve:{
+                  myRes: ServicesResolver
+                }
               },
               {
                 path: 'automation',
